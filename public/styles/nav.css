@@ -1,0 +1,23 @@
+#nav  {
+  justify-content: space-between;
+  height: 120px;
+  width: 100%;
+  top: 0;
+  background-color: #4056A1;
+  color: #e8fdff;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+#nav .write {
+  float: right;
+  font-size: 15px;
+}
+
+#nav .arrow {
+  float: right; 
+  /* padding-top: 10px;
+  padding-bottom: 5px; */ 
+}
