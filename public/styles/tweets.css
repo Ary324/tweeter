@@ -1,0 +1,42 @@
+article {
+  margin-top: 50px;
+  padding: 15px;
+  border: 2px solid;
+}
+
+.handle {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+article:hover {
+  box-shadow: 10px 10px #afbbe3;
+  transition: box-shadow 0.3s ease-in;
+}
+
+hr {
+  border: 2px solid;
+  margin: auto;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+
+.avatar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.tweet-body {
+  padding: 0 5px 0 5px;
+}
+
+.buttons :hover {
+  color: #cfb10c;
+}

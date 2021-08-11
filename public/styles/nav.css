@@ -1,7 +1,9 @@
 #nav  {
-  justify-content: space-between;
+  display: flex;
+  flex-direction: row;
   height: 120px;
   width: 100%;
+  position: fixed;
   top: 0;
   background-color: #4056A1;
   color: #e8fdff;
