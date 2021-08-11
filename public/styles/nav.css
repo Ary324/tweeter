@@ -1,6 +1,7 @@
 #nav  {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   height: 120px;
   width: 100%;
   position: fixed;
@@ -14,12 +15,11 @@
 }
 
 #nav .write {
-  float: right;
   font-size: 15px;
 }
 
-#nav .arrow {
-  float: right; 
-  /* padding-top: 10px;
-  padding-bottom: 5px; */ 
+.tweet-trigger {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

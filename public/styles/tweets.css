@@ -4,9 +4,9 @@ article {
   border: 2px solid;
 }
 
-.handle {
+.tweet-footer {
   display: flex;
-  flex-direction: column-reverse;
+  justify-content: space-between;
 }
 
 article:hover {
@@ -30,7 +30,22 @@ footer {
 .avatar {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   align-items: center;
+}
+
+.left-side {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.left-side img {
+  padding-right: 10px;
+}
+
+.handle {
+  color: rgb(131, 127, 127);
 }
 
 .tweet-body {

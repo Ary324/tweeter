@@ -31,10 +31,14 @@
   <body>
     <!-- Top nav bar (fixed) -->
     <nav id="nav">
-      <img class="logo" src="/images/bird.png" width="30px" height="20px">
-      <span class="head">tweeter</span>
-      <span class="write">Write a new tweet</span>
-      <span class="arrow"><i class="fas fa-angle-double-down" style='color: red' style='font-size: 24px'></i></span>
+      <div>
+        <img class="logo" src="/images/bird.png" width="30px" height="20px">
+        <span class="head">tweeter</span>
+      </div>
+      <div class="tweet-trigger">
+        <span class="write">Write a new tweet</span>
+        <span class="arrow"><i class="fas fa-angle-double-down" style='color: red' style='font-size: 24px'></i></span>
+      </div>
     </nav>
 
     <header>
@@ -42,7 +46,7 @@
           <img src="/images/profile-hex.png"> 
       </div>
       <br>
-      <div>
+      <div class="name">
           <h2>Arian Abedanzadeh</h2>
       </div>
     </header>
@@ -54,7 +58,7 @@
         <form action="/tweets" method="POST">
           <label for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>
-          <div>
+          <div class="tweet-footer">
             <button type="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text" style="text-align: right">140</output>
           </div>
@@ -63,11 +67,13 @@
 
       <article>
 
-          <div class="avatar"><img src="/images/profile-hex.png" width="50px" height="50px">
-            <p>Newton</p> 
+        <div class="avatar">
+          <div class="left-side">
+          <img src="/images/profile-hex.png" width="50px" height="50px">
+          <p>Newton</p> 
           </div>
           <div class="handle"><h5>@Mr.T</h5></div>
-
+        </div>
         <div>
           <p class="tweet-body">Is this website reliable?</p>
         </div>
