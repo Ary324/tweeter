@@ -30,6 +30,22 @@ const data = [
 ];
 
 $(document).ready(function() {
+  renderTweets(data);
+
+  const target = $('#target');
+  target.on('submit', function(event) {
+    event.preventDefault();
+    const url = $(this).attr('action');
+    $.ajax({
+      method: 'POST',
+      url: url,
+      data: $(this).serialize(),
+      success: function(data) {
+        console.log(data);
+      },
+    });
+  });
+});
 
   const createTweetElement = function(data) {
     const $output = $(` 
@@ -67,6 +83,3 @@ $(document).ready(function() {
       $('#allTweets').prepend($tweet); // takes return value and prepends (ensures order) it to the tweets container
     }
   };
-  renderTweets(data);
-});
-
