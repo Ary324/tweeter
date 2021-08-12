@@ -6,55 +6,17 @@
 
    
 $(document).ready(function() {
-
-  const target = $('#target');
-  target.on('submit', function(event) {
-    event.preventDefault();
-  //Form Validation
-    const counter = $('#counter'); //counter
-     const tweetLength = 140 - parseInt(counter.val());
-     console.log(tweetLength);
-     if (tweetLength > 140) {
-       alert('Tweet limit surpassed');
-       return;
-     }
-     const tweetChars = $('#tweet-text').val();
-     console.log('tweetChars:', tweetChars);
-     if (tweetChars === '' || tweetChars === null) {
-       alert('Tweet cannot be empty');
-       return;
-     } 
-    
-    const url = $(this).attr('action');
-    $.ajax({
-      method: 'POST',
-      url: url,
-      data: $(this).serialize(),
-      success: function(data) {
-        console.log(data);
-      },
-    });
-  });
-
-  const loadTweets = function() {
-    $.ajax('/tweets/', {
-      method: 'GET',
-      success: function(response) {
-        console.log('response', response);
-        renderTweets(response);
-      }
-    });
-  };
-
+ 
   loadTweets();
+  $('#target').on('submit', onSubmit);
 });
 
   const createTweetElement = function(data) {
     const $output = $(` 
     <article class="tweet"> 
-    <div class="${data.user.avatar}">
+    <div class="tweet-avatar">
           <div class="left-side">
-          <img src="/images/profile-hex.png" width="50px" height="50px">
+          <img src="${data.user.avatars}" width="50px" height="50px">
           <p>${data.user.name}</p> 
           </div>
           <div class="handle"><h5>${data.user.handle}</h5></div>
@@ -78,6 +40,7 @@ $(document).ready(function() {
   };
   
   const renderTweets = function(tweets) {
+
         
     $('#allTweets').html(''); // Clears default text
     for (let key in tweets) { // loops through tweets
@@ -85,3 +48,38 @@ $(document).ready(function() {
       $('#allTweets').prepend($tweet); // takes return value and prepends (ensures order) it to the tweets container
     }
   };
+
+  const loadTweets = function() {
+    $.ajax('/tweets/', {
+      method: 'GET',
+      success: function(response) {
+        console.log('response', response);
+        renderTweets(response);
+      }
+    });
+  };
+
+  const onSubmit = function(event) {
+    event.preventDefault();
+  //Form Validation
+    const counter = $('#counter'); //counter
+     const tweetLength = 140 - parseInt(counter.val());
+     console.log(tweetLength);
+     if (tweetLength > 140) {
+       alert('Tweet limit surpassed');
+       return;
+     }
+     const tweetChars = $('#tweet-text').val();
+     console.log('tweetChars:', tweetChars);
+     if (tweetChars === '' || tweetChars === null) {
+       alert('Tweet cannot be empty');
+       return;
+     } 
+    
+     const data = $(this).serialize();
+     $.post('/tweets', data)
+       .then(data => {
+         loadTweets();
+       });
+       $("#tweet-text").val("");
+   }; 

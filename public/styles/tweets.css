@@ -27,21 +27,27 @@ footer {
 }
 
 
-.avatar {
+.tweet-avatar {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-between; 
   align-items: center;
+}
+
+h5 {
+  margin: 0;
 }
 
 .left-side {
   display: flex;
-  flex-direction: row;
   align-items: center;
 }
 
 .left-side img {
   padding-right: 10px;
+}
+
+.left-side p {
+  margin: 0;
 }
 
 .handle {
