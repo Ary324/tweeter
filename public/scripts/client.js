@@ -11,6 +11,12 @@ $(document).ready(function() {
   $('#target').on('submit', onSubmit);
 });
 
+const escape = function(str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
+
   const createTweetElement = function(data) {
     const $output = $(` 
     <article class="tweet"> 
@@ -22,7 +28,7 @@ $(document).ready(function() {
           <div class="handle"><h5>${data.user.handle}</h5></div>
         </div>
         <div>
-          <p class="tweet-body">${data.content.text}</p>
+          <p class="tweet-body">${escape(data.content.text)}</p>
         </div>
         <hr>
 
