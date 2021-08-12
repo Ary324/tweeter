@@ -36,3 +36,12 @@ label {
   width: 100%;
   background: transparent;
 }
+
+#error-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1em;
+  color: #ff1919c7;
+  font-weight: 500;
+}

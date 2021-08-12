@@ -5,11 +5,6 @@
  */
 
    
-$(document).ready(function() {
- 
-  loadTweets();
-  $('#target').on('submit', onSubmit);
-});
 
 const escape = function(str) {
   let div = document.createElement("div");
@@ -68,24 +63,35 @@ const escape = function(str) {
   const onSubmit = function(event) {
     event.preventDefault();
   //Form Validation
+    $('#error-message').hide();
     const counter = $('#counter'); //counter
      const tweetLength = 140 - parseInt(counter.val());
      console.log(tweetLength);
      if (tweetLength > 140) {
-       alert('Tweet limit surpassed');
-       return;
+       $('#error-message').find('.error-text').text('Tweet limit surpassed');
+       $('#error-message').slideDown('slow');
+       return $("#tweet-text").val("");
      }
      const tweetChars = $('#tweet-text').val();
      console.log('tweetChars:', tweetChars);
      if (tweetChars === '' || tweetChars === null) {
-       alert('Tweet cannot be empty');
-       return;
+       $('#error-message').find('.error-text').text('Tweet cannot be empty');
+       $('#error-message').slideDown('slow');
+       return $("#tweet-text").val("");
      } 
     
      const data = $(this).serialize();
      $.post('/tweets', data)
        .then(data => {
+         $("#tweet-text").val("");
          loadTweets();
        });
-       $("#tweet-text").val("");
-   }; 
+       
+  };
+
+
+   $(document).ready(function() {
+    $('#target').on('submit', onSubmit);
+    $('#error-message').hide();
+    loadTweets();
+   });
