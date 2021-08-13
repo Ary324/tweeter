@@ -31,11 +31,32 @@ main {
   justify-content: center;
   margin-top: 50px;
   margin-bottom: auto;
-  margin-right: auto;
+  margin-right: 2em;
   margin-left: auto;
   width: 90%;
   background-color: #f4f1ec;
 }
+
+.responsive-container {
+  display: flex;
+  flex-direction: row;
+}
+
+@media screen and (max-width: 1024px) {
+  .responsive-container {
+    flex-direction: column;
+  }
+  .responsive-container header {
+    margin-top: 0;
+    width: 100%;
+    margin-left: 0;
+  }
+  body #nav {
+    background-color: #e66318;
+  }
+}
+
+
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
