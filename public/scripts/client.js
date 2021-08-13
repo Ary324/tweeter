@@ -89,9 +89,20 @@ const escape = function(str) {
        
   };
 
+  const hideTweet = function() {
+    if ($('.new-tweet').is(':visible')) {
+      $('.new-tweet').slideUp('slow');
+    } else {
+      $('.new-tweet').slideDown('slow');
+      $('#tweet-trigger').focus();
+    }
+  };
+
 
    $(document).ready(function() {
     $('#target').on('submit', onSubmit);
     $('#error-message').hide();
+    $('.new-tweet').hide();
     loadTweets();
+    $('#tweet-button').on('click', hideTweet);
    });

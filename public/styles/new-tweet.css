@@ -15,9 +15,6 @@ label {
   display: flex; 
   flex-direction: column;
   justify-content: center;
-  flex-grow: 1;
-  width: auto;
-  flex-direction: column;
 }
 
 .tweet-button {

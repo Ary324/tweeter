@@ -29,7 +29,7 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: 50px;
+  margin-top: 150px;
   margin-bottom: auto;
   margin-right: 2em;
   margin-left: auto;
@@ -46,6 +46,9 @@ main {
   .responsive-container {
     flex-direction: column;
   }
+  .responsive-container main {
+    margin-top: 10px;
+  }
   .responsive-container header {
     margin-top: 0;
     width: 100%;
@@ -56,7 +59,3 @@ main {
   }
 }
 
-
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
