@@ -26,8 +26,6 @@
 
 #nav .tweet-trigger button {
   background: transparent;
-  outline: none;
-  border: none;
   color: white;
   cursor: pointer;
 }

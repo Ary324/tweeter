@@ -5,13 +5,14 @@
  */
 
    
-
+// Security
 const escape = function(str) {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 };
 
+//Default Tweet Format
   const createTweetElement = function(data) {
     const $output = $(` 
     <article class="tweet"> 
@@ -40,9 +41,8 @@ const escape = function(str) {
     return $output;
   };
   
+  
   const renderTweets = function(tweets) {
-
-        
     $('#allTweets').html(''); // Clears default text
     for (let key in tweets) { // loops through tweets
       let $tweet = createTweetElement(tweets[key]); // calls createTweetElement for each tweet
@@ -80,17 +80,19 @@ const escape = function(str) {
        return $("#tweet-text").val("");
      } 
     
+     //Jquery Ajax Post for Data
      const data = $(this).serialize();
      $.post('/tweets', data)
        .then(data => {
          $("#tweet-text").val("");
          loadTweets();
        });
-       
   };
 
+
+  //Function for hiding Compose tweet element
   const hideTweet = function() {
-    if ($('.new-tweet').is(':visible')) {
+    if ($('#tweet-text').is(':visible')) {
       $('.new-tweet').slideUp('slow');
     } else {
       $('.new-tweet').slideDown('slow');
@@ -98,7 +100,7 @@ const escape = function(str) {
     }
   };
 
-
+  //Dom Function
    $(document).ready(function() {
     $('#target').on('submit', onSubmit);
     $('#error-message').hide();

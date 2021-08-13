@@ -11,7 +11,7 @@ html {
 }
 
 /*
- * Global layout stuff
+ * Global layout 
  */
 
 body {
@@ -38,11 +38,13 @@ main {
 }
 
 .responsive-container {
+  /* parent div combined elements to be in a row at first */
   display: flex;
   flex-direction: row;
 }
 
-@media screen and (max-width: 1024px) {
+/* Styling changes when Screen is minimized */
+@media screen and (max-width: 1024px) { 
   .responsive-container {
     flex-direction: column;
   }
