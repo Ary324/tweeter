@@ -21,6 +21,6 @@ This repository is the starter code for the project: Students will fork and clon
 - md5
 
 ## Screenshots
-!["Homepage Screenshot"]()
-!["Tweets Screenshot"]()
+!["Homepage Screenshot"](https://github.com/Ary324/tweeter/blob/master/%20Docs/home.png?raw=true)
+!["Tweets Screenshot"](https://github.com/Ary324/tweeter/blob/master/%20Docs/%20tweets.png?raw=true)
 
